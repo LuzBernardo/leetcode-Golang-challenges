@@ -1,45 +1,21 @@
 package main
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import "fmt"
 
-func binarySearch(list []*ListNode, target int) int {
-	left, right := 0, len(list)
-
-	if left < right {
-		mid := left + ((right - left) / 2)
-
-		if list[mid].Val < target {
-			left = mid + 1
-		} else {
-			right = mid
-		}
+func trapRainWater(heightMap [][]int) int {
+	if len(heightMap) == 0 {
+		return 0
 	}
 
-	return left
-}
-
-func mergeKLists(lists []*ListNode) *ListNode {
-	node := &ListNode{}
-
-	if len(lists) == 0 {
-		return &ListNode{}
-	}
-	if len(lists) == 1 && lists[0].Next == nil {
-		return lists[0]
-	}
-
-	for _, elem := range lists {
-		node.Next = &ListNode{
-			Val: elem.Val,
-		}
-	}
-
-	return node
+	return 0
 }
 
 func main() {
-	mergeKLists(make([]*ListNode, 0))
+	inputs := [][][]int{
+		{{1, 4, 3, 1, 3, 2}, {3, 2, 1, 3, 2, 4}, {2, 3, 3, 2, 3, 1}},
+	}
+
+	for _, input := range inputs {
+		fmt.Println(trapRainWater(input))
+	}
 }
