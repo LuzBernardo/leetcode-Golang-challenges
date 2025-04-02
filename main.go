@@ -7,6 +7,12 @@ func trapRainWater(heightMap [][]int) int {
 		return 0
 	}
 
+	for i := 1; i < len(heightMap)-1; i++ {
+		for j := 1; j < len(heightMap[i])-1; j++ {
+			fmt.Println(i, j)
+		}
+	}
+
 	return 0
 }
 
